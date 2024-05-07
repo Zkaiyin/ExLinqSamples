@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34723.18
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExLinqSample010", "ExLinqSample010\ExLinqSample010.csproj", "{2801DF1A-E85E-4405-A872-BAF1E9A7B399}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "方案項目", "方案項目", "{DA7E3B2C-8EF3-421A-A333-7AC2DFDAAD0F}"
+	ProjectSection(SolutionItems) = preProject
+		ResultInfo.cs = ResultInfo.cs
+		Program.cs = Program.cs
+		StudentInfo.cs = StudentInfo.cs
+		TeacherInfo.cs = TeacherInfo.cs
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2801DF1A-E85E-4405-A872-BAF1E9A7B399}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2801DF1A-E85E-4405-A872-BAF1E9A7B399}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2801DF1A-E85E-4405-A872-BAF1E9A7B399}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2801DF1A-E85E-4405-A872-BAF1E9A7B399}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AF603AA1-C204-4A1D-82CD-FDE56C28F378}
+	EndGlobalSection
+EndGlobal
