@@ -1,35 +1,57 @@
-﻿static List<TeacherInfo> CreateTeachers()
+﻿using System.Net.Cache;
+
+static List<MyData> CreateList()
 {
-    return new List<TeacherInfo>()
+    return new List<MyData>()
     {
-        new TeacherInfo {ClassName ="1A" , CreateTeachers ="Bill"},
-        new TeacherInfo {ClassName ="1B" , CreateTeachers ="David"}
+        new MyData {nameof = "Bill" , Age = 47},
+        new MyData {nameof = "John" , Age = 37},
+        new MyData {nameof = "Tom" , Age = 48},
+        new MyData {nameof = "David" , Age = 36},
+        new MyData {nameof = "Bill" , Age = 35}
     };
 }
-static List<studentInfo> CreateStudents()
+static void Main(string[] args)
 {
-    return new List<StudentInfo>()
+    var list = CreateList();
+    var order1 = list.OrderBy((x) => x.Age);
+    Display(order1);
+    var order2 = list.OrderByDescending((x) => x.Age);
+    Display(order2);
+    var order3 = list.OrderBy((x) => x.Name).ThenBy((x) => x.Age);
+    Display(order3);
+    var order4 = list.OrderBy((x) => x.Name).ThenByDescending((x) => x.Age);
+    Display(order4);
+    Console.ReadLine();
+}
+static void Display(IOrderedEnumerable<MyData> source)
+{ 
+    foreach (var item in source)
     {
-        new StudentInfo {ClassName ="1A" , CreateStudents ="魯夫"},
-        new StudentInfo {ClassName ="1A" , CreateStudents ="索隆"},
-        new StudentInfo {ClassName ="1B" , CreateStudents ="櫻木"},
-        new StudentInfo {ClassName ="1A" , CreateStudents ="香吉士"},
-        new StudentInfo {ClassName ="1B" , CreateStudents ="流川風"},
+        Console.WriteLine(item.Name + ":" + item.Age);
     }
+    Console.WriteLine("---------------");
 }
 static void Main(string[] args)
-     {
-     var teachers = CreateTeachers();
-     var students = CreateStudents();
-     var result = from t in teachers
-                  join s in students
-                  on t.ClassName equals s.ClassName
-                  select
-                  new ResultInfo
-          { ClassName = t.ClassName, teachers = t.teachers, Student = s.Students };
-          foreach (var item in result)
-          {
-          Console.WriteLine($"{item.ClassName}:{item.Teacher}:{item.Student});
-          }
-           Console.ReadLine();
+{
+    var list = CreateList();
+    var order1 =
+        from o in list
+        orderby o.Name, o.Age
+        select o;
+    Display(order1);
+    var order2 = 
+        from o in list  
+        orderby o.Name descending, o.Age descending
+        select o;
+    Display(order2);
+    Console.ReaLine();
+}
+static void Display(IOrderedEnumerable<MyData> source
+    {
+    foreach (var item in source)
+    {
+    Console.WriteLine($"{item.Name} : {item.Age}");
+    }
+    Console WriteLine("---------------");
 }
